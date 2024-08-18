@@ -104,9 +104,38 @@ public class cofemacgina {
                 break;
             case 5:
                 log("Выбор собственного варианта.");
-                menu5.nam5();
-                break;
-            case 6:
+                if (cofemacgina.coffee < 120) {
+                    log("Недостаточно кофе.");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Что-то пошло не так! Пополните бак с кофе!");
+                    System.out.println("-------------------------------------------");
+                    menu3.nam3();
+                }
+                if (cofemacgina.milk < 1900) {
+                    log("Недостаточно молока.");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Что-то пошло не так! Пополните бак с молоком!");
+                    System.out.println("-------------------------------------------");
+                    menu3.nam3();
+                }
+                if (cofemacgina.water < 2000) {
+                    log("Недостаточно воды.");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Что-то пошло не так! Пополните бак с водой!");
+                    System.out.println("-------------------------------------------");
+                    menu3.nam3();
+                }
+                if (cofemacgina.pollution > 140) {
+                    log("Необходимо очистить кофемашину.");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Что-то пошло не так! Очистите кофемашину!");
+                    System.out.println("-------------------------------------------");
+                    menu3.nam3();
+                } else {
+                    log("Приготовление своегонапитка.");
+                    menu5.nam5();
+                    break;
+                }case 6:
                 log("Выбор просмотр логов.");
                 menu6.nam6();
                 break;

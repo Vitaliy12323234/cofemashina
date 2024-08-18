@@ -18,7 +18,7 @@ public class menu5 {
             cofemacgina.pollution ++;
 
             System.out.println("-------------------------------------------");
-            System.out.println("Профиль " + name + " успешно использован.");
+            System.out.println("Ваш " + name + " готов.");
             System.out.println("-------------------------------------------");
             cofemacgina.mainMenu();
         } else {

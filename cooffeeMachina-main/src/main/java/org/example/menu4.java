@@ -37,16 +37,28 @@ public class menu4 {
             System.out.println("Введите количество молока: ");
             System.out.println("-------------------------------------------");
             int milk = scan.nextInt();
+            if (milk > 200 || milk <= 0){
+                System.out.println("-------------------------------------------");
+                System.out.println("Неккоректное значение");
+                menu4.nam4();}
 
             System.out.println("-------------------------------------------");
             System.out.println("Введите количество кофе: ");
             System.out.println("-------------------------------------------");
             int coffee = scan.nextInt();
+            if (coffee > 5 || coffee <= 0){
+                System.out.println("-------------------------------------------");
+                System.out.println("Неккоректное значение");
+                menu4.nam4();}
 
             System.out.println("-------------------------------------------");
             System.out.println("Введите количество воды: ");
             System.out.println("-------------------------------------------");
             int water = scan.nextInt();
+            if (water > 200 || water <= 0 ){
+                System.out.println("-------------------------------------------");
+                System.out.println("Неккоректное значение");
+                menu4.nam4();}
 
             scan.nextLine();
             Profile profile = new Profile(milk, coffee, water);
