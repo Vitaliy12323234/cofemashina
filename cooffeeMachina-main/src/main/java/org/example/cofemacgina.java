@@ -27,19 +27,34 @@ public class cofemacgina {
 
         Scanner scan = new Scanner(System.in);
         log("Открыто главное меню.");
-
-        System.out.println("-------------------------------------------");
-        System.out.println("1 - Выбрать готовый вариант ");
-        System.out.println("2 - Проверить наличие ингредиентов ");
-        System.out.println("3 - Пополнить ингредиенты ");
-        System.out.println("4 - Создать свой вариант ");
-        System.out.println("5 - Выбрать свой вариант ");
-        System.out.println("6 - Посмотреть логи ");
-        System.out.println("0 - Выключить ");
-        System.out.println("Что выберете?: ");
-        System.out.println("-------------------------------------------");
-
-        byte van = scan.nextByte();
+        byte van = -1;
+        while (van < 0 || van > 6) {
+            System.out.println("-------------------------------------------");
+            System.out.println("1 - Выбрать готовый вариант ");
+            System.out.println("2 - Проверить наличие ингредиентов ");
+            System.out.println("3 - Пополнить ингредиенты ");
+            System.out.println("4 - Создать свой вариант ");
+            System.out.println("5 - Выбрать свой вариант ");
+            System.out.println("6 - Посмотреть логи ");
+            System.out.println("0 - Выключить ");
+            System.out.println("Что выберете?: ");
+            System.out.println("-------------------------------------------");
+            try {
+                van = scan.nextByte();
+                if (van < 0 || van > 6) {
+                    log("Ошибка ввода: ");
+                    System.out.println("Выберите значение от 0 до 6.");
+                }
+                if (van == ' '){
+                    log("Ошибка ввода: ");
+                    System.out.println("Выберите значение от 0 до 6.");
+                }
+            } catch (Exception e) {
+                log("Ошибка ввода: ");
+                System.out.println("Введите корректное число от 0 до 6.");
+                scan.next();
+            }
+        }
         switch (van) {
             case 1:
                 log("Попытка выбрать готовый вариант.");
@@ -98,12 +113,6 @@ public class cofemacgina {
             case 0:
                 log("Выключение кофемашины.");
                 System.out.println("Кофемашина выключена.");
-                break;
-            default:
-                log("Неизвестная команда.");
-                System.out.println("-------------------------------------------");
-                System.out.println("Что-то пошло не так, попробуйте снова!");
-                System.out.println("-------------------------------------------");
                 break;
         }
         scan.close();
